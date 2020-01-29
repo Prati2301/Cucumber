@@ -23,5 +23,10 @@ When user open TestMe
 And user click SignIn
 And user enters credentials as
 |lalitha|Password123|
+And user searches a product
+And add product to cart
+Then purchase succesfull
+
+
 
 

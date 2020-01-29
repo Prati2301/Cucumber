@@ -9,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import cucumber.api.DataTable;
 import cucumber.api.java.en.And;
+import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class Login {
@@ -37,4 +38,24 @@ public class Login {
 			driver.findElement(By.name("password")).sendKeys(cred.get(1));
 			driver.findElement(By.name("Login")).click();
 		}
+		
+		@And("^user searches a product$")
+		public void usersearchesaproduct()
+		{
+			driver.findElement(By.name("products")).sendKeys("head");
+			driver.findElement(By.xpath("//*[@value='FIND DETAILS']")).click();
+			driver.findElement(By.xpath("//*[@href='#']")).click();
+		}
+		
+		@And("^add product to cart$")
+		public void addproducttocart()
+		{
+			
+		}
+		@Then("^purchase succesfull$")
+		public void purchasesuccesfull()
+		{
+			System.out.println("Purchase succesfull");
+		}
+		
 }
